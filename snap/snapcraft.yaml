@@ -16,7 +16,7 @@ compression: lzo
 
 apps:
   silver:
-    command: usr/bin/python3 $SNAP/silver.py
+    command: usr/bin/python3 $SNAP/bin/silver.py
     environment:
       LC_ALL: C.UTF-8
       PYTHONPATH: $SNAP/usr/lib/python3/dist-packages
@@ -49,11 +49,11 @@ parts:
       - nmap
       - masscan      
       
-#  publish:
-#    plugin: dump
-#    source: .
-#    organize:
-#      ./silver.py: bin/silver.py
-#      ./db: bin/db
-#      ./core: bin/core
-#      ./modules: bin/modules
+  publish:
+    plugin: dump
+    source: .
+    organize:
+      ./silver.py: bin/silver.py
+      ./db: bin/db
+      ./core: bin/core
+      ./modules: bin/modules
